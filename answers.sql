@@ -157,10 +157,10 @@ SELECT
 	DISCOUNT
 FROM
 	ORDERS
+WHERE DISCOUNT>0
 ORDER BY
 	DISCOUNT ASC
 LIMIT 1;
-
 -- 16.write a querey that shows the return quantity for each product id, order by the highest return quantity
 SELECT 
     product_id,
