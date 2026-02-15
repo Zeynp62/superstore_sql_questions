@@ -104,7 +104,7 @@ WHERE
 -- 9. What is the average sales value for products with a discount greater than 20%?
 -- Prompt: WHERE and AVG
 SELECT
-	AVG(SALES)
+	ROUND(AVG(SALES),2) AS average_sales
 FROM
 	ORDERS
 WHERE
@@ -112,8 +112,8 @@ WHERE
 -- 10. What is the highest and lowest sales values for orders shipped using the 'Same Day' ship mode?
 -- Prompt: WHERE, SELECT, MAX, and MIN
 SELECT
-	MAX(SALES),
-	MIN(SALES)
+	MAX(SALES) AS max_sales,
+	MIN(SALES) AS min_sales
 FROM
 	ORDERS
 WHERE
