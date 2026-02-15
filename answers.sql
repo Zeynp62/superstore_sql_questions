@@ -6,7 +6,8 @@ SELECT
 FROM
 	ORDERS
 WHERE
-	SHIP_MODE = 'Same Day';-- 2. Which customers have postal codes that start with '56' and have a sales value greater than or equal to $10?
+	SHIP_MODE = 'Same Day';
+-- 2. Which customers have postal codes that start with '56' and have a sales value greater than or equal to $10?
 -- Prompt: WHERE and SELECT
 SELECT DISTINCT
 	C.CUSTOMER_ID,
@@ -21,12 +22,15 @@ WHERE
 	AND O.SALES >= 10;
 --or without joind beased on orders table only:
 SELECT DISTINCT
-	*
+	CUSTOMER_ID,
+	SALES
 FROM
 	ORDERS
 WHERE
 	POSTAL_CODE LIKE '56%'
-	AND SALES >= 10;  
+	AND SALES >= 10
+ORDER BY
+	CUSTOMER_ID;
 -- 3. Which product ids have the word 'chair' in their name and
 -- are shipped using the Second Class ship mode? Order the result by sales in descending order.
 -- Prompt: WHERE, ILIKE, and ORDER BY
@@ -64,7 +68,8 @@ FROM
 	ORDERS
 WHERE
 	QUANTITY > 1
-	AND SHIP_MODE != 'Standard Class';-- 6. What are the product ids and sales for orders shipped using a ship mode that contains the word "Class"?
+	AND SHIP_MODE != 'Standard Class';
+-- 6. What are the product ids and sales for orders shipped using a ship mode that contains the word "Class"?
 -- Prompt: WHERE and SELECT with ILIKE
 SELECT
 	PRODUCT_ID,
@@ -72,7 +77,8 @@ SELECT
 FROM
 	ORDERS
 WHERE
-	SHIP_MODE ILIKE '%Class%';-- 7. What are the product ids, sales, and quantity for orders with a sales value
+	SHIP_MODE ILIKE '%Class%';
+-- 7. What are the product ids, sales, and quantity for orders with a sales value
 -- greater than or equal to $20 and a quantity between 2 and 5?
 -- Prompt: WHERE, SELECT, and BETWEEN
 SELECT
@@ -93,8 +99,8 @@ SELECT
 FROM
 	ORDERS
 WHERE
-	PRODUCT_ID LIKE 'OFF'
-	AND SHIP_MODE NOT IN ('Standard Class', 'Second Class');
+	PRODUCT_ID LIKE 'OFF%'
+	AND SHIP_MODE NOT IN ('Standard Class', 'Second Class');a
 -- 9. What is the average sales value for products with a discount greater than 20%?
 -- Prompt: WHERE and AVG
 SELECT
