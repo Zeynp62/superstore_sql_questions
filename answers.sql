@@ -165,9 +165,12 @@ LIMIT 1;
 --class answer
 SELECT DISTINCT product_id, return_quantity FROM returns ORDER BY return_quantity DESC;
 --my answer based on group by
--- SELECT 
---     product_id,
---     SUM(return_quantity) AS total_return_quantity
--- FROM returns
--- GROUP BY product_id
--- ORDER BY total_return_quantity DESC;
+-- SELECT
+-- 	DISTINCT PRODUCT_ID,
+-- 	SUM(RETURN_QUANTITY) AS TOTAL_RETURN_QUANTITY_PER_PRODUCT
+-- FROM
+-- 	RETURNS
+-- GROUP BY
+-- 	PRODUCT_ID
+-- ORDER BY
+-- 	TOTAL_RETURN_QUANTITY_PER_PRODUCT DESC;
