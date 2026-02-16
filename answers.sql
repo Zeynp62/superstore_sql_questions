@@ -164,10 +164,10 @@ LIMIT 1;
 -- 16.write a querey that shows the return quantity for each product id, order by the highest return quantity
 --class answer
 SELECT DISTINCT product_id, return_quantity FROM returns ORDER BY return_quantity DESC;
---my answer
-SELECT 
-    product_id,
-    SUM(return_quantity) AS total_return_quantity
-FROM returns
-GROUP BY product_id
-ORDER BY total_return_quantity DESC;
+--my answer based on group by
+-- SELECT 
+--     product_id,
+--     SUM(return_quantity) AS total_return_quantity
+-- FROM returns
+-- GROUP BY product_id
+-- ORDER BY total_return_quantity DESC;
